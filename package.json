@@ -1,0 +1,41 @@
+{
+  "name": "www",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "check:types": "tsc --pretty --noEmit",
+    "check:format": "prettier --check .",
+    "check:lint": "next lint",
+    "check:all": "yarn check:format && yarn check:lint && yarn check:types",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "generate": "env-cmd -f ./.env.local contentful-typescript-codegen --output @types/generated/contentful.d.ts"
+  },
+  "dependencies": {
+    "env-cmd": "^10.1.0",
+    "next": "12",
+    "react": "17",
+    "react-dom": "17",
+    "tailwindcss": "^2.2.16"
+  },
+  "devDependencies": {
+    "@types/node": "20.9.0",
+    "@types/react": "17.0.27",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "autoprefixer": "^10.3.7",
+    "contentful-management": "^7.42.3",
+    "contentful-typescript-codegen": "^3.2.3",
+    "eslint": "7.32.0",
+    "eslint-config-next": "12",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.0",
+    "postcss": "^8.3.9",
+    "prettier": "^2.4.1",
+    "typescript": "4.4.3"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "next"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["prettier", "@typescript-eslint"],
+  "parserOptions": {
+    "project": "tsconfig.json"
+  },
+  "rules": {
+    "no-var": "error", //require `let` or `const` instead of `var`
+    "no-param-reassign": "error", //disallow reassigning `function` parameters
+    "prefer-const": "error", //require `const` declarations for variables that are never reassigned after declared
+    "prefer-template": "error", //require template literals instead of string concatenation
+    "spaced-comment": "error", //enforce consistent spacing after the `//` or `/*` in a comment
+
+    "react/prop-types": "off", //Prevent missing props validation in a React component definition
+    "react/destructuring-assignment": "error", //Enforce consistent usage of destructuring assignment of props, state, and context
+
+    "react-hooks/rules-of-hooks": "error", //Enforce these rules https://reactjs.org/docs/hooks-rules.html
+    "react-hooks/exhaustive-deps": "warn",
+
+    "prettier/prettier": "warn",
+
+    /* Import plugin */
+    "import/named": "off",
+    "import/no-unresolved": "off", // unresolved are handled by ts
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "src/**",
+            "group": "parent",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["parent"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+
+    "@typescript-eslint/member-delimiter-style": "off", //Require a specific member delimiter style for interfaces and type literals
+    "@typescript-eslint/explicit-function-return-type": "off", //Require explicit return types on functions and class methods
+    "@typescript-eslint/prefer-readonly": "error", //Requires that private members are marked as readonly if they're never modified outside of the constructor
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"], // Consistent with type definition either interface or type
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "ignoreRestSiblings": true }
+    ] //require variables to be used, but ignore unused vars in destructuring
+  }
+}
