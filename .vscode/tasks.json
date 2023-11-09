@@ -1,0 +1,79 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🚀 DEVELOP",
+      "type": "npm",
+      "script": "dev",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "dev" //Task with the same group are opened in split terminal view
+      }  
+    },
+    {
+      "label": "⚙️ GENERATE",
+      "type": "npm",
+      "script": "generate",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "dev" 
+      }
+    },
+    {
+      "label": "✅ CHECK",
+      "type": "npm",
+      "script": "check:all",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "dev" 
+      }
+    },
+    {
+      "label": "🎨 STORYBOOK",
+      "type": "npm",
+      "script": "storybook",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "dev" 
+      }
+    }
+
+    /*{
+      "label": "💣  TEST",
+      "type": "npm",
+      "script": "test:watch",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true,
+        "group": "dev"
+
+      }
+    }*/
+  ]
+}
