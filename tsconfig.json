@@ -13,7 +13,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "strict": true /* Enable all strict type-checking options. */,
   /* Additional Checks */
@@ -28,6 +33,12 @@
   "paths": {
     "app/*": ["src/*"] // Alias /src to /app
   },
-  "include": ["next-env.d.ts", "next.config.js", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "next.config.js",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
